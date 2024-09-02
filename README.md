@@ -3,6 +3,7 @@
 ## Step 1: Install GNU Stow
 On MacOS run 
 ```brew install stow```.
+
 On Debian-based Linux run 
 ```sudo apt install stow```.
 
