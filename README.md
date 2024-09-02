@@ -1,3 +1,5 @@
+# Instructions for installing and using dotfiles. 
+
 ## Step 1: Install GNU Stow
 On MacOS run 
 ```brew install stow```.
