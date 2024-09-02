@@ -11,7 +11,8 @@ Create dotfiles directory in your home folder by running ```mkdir dotfiles```.
 Run ```git clone git@github.com:jzetterman/dotfiles.git```.
 
 ## Step 4: Use stow to create symlinks to your dotfiles: 
-From ~/dotfiles run ```$ stow .```.
+
+```$ ~/dotfiles/stow .```.
 
 ## Step 5: Reload terminal
 Run ```source ~/.zshrc``` or restart your terminal
