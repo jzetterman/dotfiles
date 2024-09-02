@@ -12,7 +12,7 @@ Run ```git clone git@github.com:jzetterman/dotfiles.git```.
 
 ## Step 4: Use stow to create symlinks to your dotfiles: 
 
-```$ ~/dotfiles/stow .```.
+```$ stow ~/dotfiles/.```
 
 ## Step 5: Reload terminal
 Run ```source ~/.zshrc``` or restart your terminal
