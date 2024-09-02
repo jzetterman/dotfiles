@@ -19,3 +19,5 @@ Run ```git clone git@github.com:jzetterman/dotfiles.git```.
 
 ## Step 5: Reload terminal
 Run ```source ~/.zshrc``` or restart your terminal
+
+All information sourced from: https://youtu.be/y6XCebnB9gs?si=BOaOsXYN-4K2fkpC
