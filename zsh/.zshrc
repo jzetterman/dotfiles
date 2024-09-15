@@ -3,8 +3,6 @@ ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 [ ! -d $ZINIT_HOME/.git ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
 source "${ZINIT_HOME}/zinit.zsh"
 
-eval "$(/opt/homebrew/bin/brew shellenv)"
-
 # Load Starship terminal styling
 eval "$(starship init zsh)"
 
@@ -44,10 +42,12 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 # Aliases
 alias ls='ls --color'
 
-# Shell integrations
-source <(fzf --zsh)
+# Shell integrations (only for MacOS integration)
+# source <(fzf --zsh)
+
+# PATH
+path+=('~/.local/share/applications/zellij/')
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-export PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"

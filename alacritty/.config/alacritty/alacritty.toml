@@ -1,0 +1,37 @@
+import = [
+  # uncomment the flavour you want below:
+  # "~/.config/alacritty/catppuccin-latte.toml"
+  # "~/.config/alacritty/catppuccin-frappe.toml"
+  "~/.config/alacritty/catppuccin-macchiato.toml"
+  # "~/.config/alacritty/catppuccin-mocha.toml"
+]
+
+[window]
+dimensions.columns = 134
+dimensions.lines = 100
+padding.x = 8
+padding.y = 8
+opacity = 0.95
+blur = true
+
+[font]
+normal.family = "MesloLGS Nerd Font Mono"
+bold.family = "MesloLGS Nerd Font Mono"
+italic.family = "MesloLGS Nerd Font Mono"
+bold_italic.family = "MesloLGS Nerd Font Mono"
+
+size = 14.0
+
+[selection]
+save_to_clipboard = true
+
+[cursor]
+# style.shape = "Beam"
+style.blinking = "Always"
+# thickness = 0.01
+
+[mouse]
+bindings = [
+  { mouse = "Right", action = "Paste" },
+]
+hide_when_typing = true
