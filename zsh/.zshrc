@@ -46,11 +46,13 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 
 # Aliases
 alias ls='ls --color'
+alias cd=z
 
 neofetch
 
-# Shell integrations (only for MacOS integration)
-# source <(fzf --zsh)
+# Shell integrations
+# source <(fzf --zsh) ** MacOS Only **
+eval "$(zoxide init zsh)"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
