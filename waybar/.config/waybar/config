@@ -1,0 +1,161 @@
+{
+    "layer": "top", // Waybar at top layer
+    "position": "top", // Waybar at the bottom of your screen
+    "height": 30, // Waybar height
+    // "width": 1366, // Waybar width
+    // Choose the order of the modules
+    "modules-left": ["custom/appmenuicon", "hyprland/workspaces", "hyprland/mode", "group/links", "custom/spotify"],
+    "modules-center": ["hyprland/window"],
+    "modules-right": ["tray", "pulseaudio", "network", "cpu", "memory", "battery", "clock", "custom/exit"],
+    // Hyprland Window
+    "hyprland/window": {
+      "rewrite": {
+        "(.*) - Brave": "$1",
+        "(.*) - Chromium": "$1",
+        "(.*) - Brave Search": "$1",
+        "(.*) - Outlook": "$1",
+        "(.*) Microsoft Teams": "$1"
+      },
+      "separate-outputs": true
+    },
+    "hyprland/workspaces": {
+        "on-scroll-up": "hyprctl dispatch workspace r-1",
+        "on-scroll-down": "hyprctl dispatch workspace r+1",
+        "on-click": "activate",
+        "all-outputs": true,
+        "format": "{icon}",
+        "format-icons": {
+            "1": "",
+            "2": "",
+            "3": "",
+            "4": "",
+            "5": "",
+            "6:music": "",
+            "7:docs": "",
+            "urgent": "",
+            "focused": "",
+            "default": ""
+        },
+        "persistent-workspaces": {
+          "*": 5
+        }
+
+    },
+    "sway/mode": {
+        "format": "<span style=\"italic\">{}</span>"
+    },
+    // Rofi Application Launcher
+    "custom/appmenuicon": {
+      "format": "",
+      "on-click": "~/.config/rofi/launchers/type-1/launcher.sh",
+      "on-click-right": "~/.config/hypr/scripts/keybindings.sh",
+      "tooltip-format": "Left: Open the application launcher\nRight: Show all keybindings"
+    },
+    // Group Links
+    "group/links": {
+      "orientation": "horizontal",
+      "drawer": {
+        "transition-duration": 300,
+        "children-class": "not-memory",
+        "transition-left-to-right": true
+      },
+      "modules": [
+        "custom/calculator",
+        "custom/windowsvm"      
+      ]
+    },
+    // Calculator
+    "custom/calculator": {
+      "format": "",
+      "on-click": "gnome-calculator",
+      "tooltip-format": "Open calculator"
+    },
+    // Windows VM
+    "custom/windowsvm": {
+      "format": "",
+      "on-click": "looking-glass-client size:win=3840x2160",
+      "tooltip": false
+    },
+    // System tray
+    "tray": {
+      "icon-size": 21,
+      "spacing": 10
+    },
+    "clock": {
+        "format": "{:%a %b %e %I:%M %p}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        //"format-alt": "{:%Y-%m-%d}"
+    },
+    // Group Hardware
+    "group/hardware": {
+      "orientation": "inherit",
+      "drawer": {
+        "transition-duration": 300,
+        "children-class": "not-memory",
+        "transition-left-to-right": false
+      },
+      "modules": ["custom/system", "disk", "cpu", "memory", "hyprland/language"]
+    },
+    // System
+    "custom/system": {
+      "format": "",
+      "tooltip": false
+    },
+    "cpu": {
+        "format": "{usage}% "
+    },
+    "memory": {
+        "format": "{}% "
+    },
+    "battery": {
+        "bat": "BAT0",
+        "states": {
+            // "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}% {icon}",
+        // "format-good": "", // An empty format will hide the module
+        // "format-full": "",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "network": {
+        // "interface": "wlp2s0", // (Optional) To force the use of this interface
+        "format-wifi": "{essid}({signalStrength}%) {ipaddr} ",
+        "format-ethernet": "{ipaddr}/{cidr} ",
+        "tooltip-format": "{ifname} via {gwaddr} ",
+        "format-linked": "{ifname} (No IP) ",
+        "format-disconnected": "Disconnected ⚠",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    },
+    "pulseaudio": {
+        //"scroll-step": 1,
+        "format": "{volume}% {icon}",
+        "format-bluetooth": "{volume}% {icon}",
+        "format-muted": "",
+        "format-icons": {
+            "headphones": "",
+            "handsfree": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+    "custom/spotify": {
+        "format": " {}",
+        "max-length": 40,
+        "interval": 30, // Remove this if your script is endless and write in loop
+        "exec": "$HOME/.config/waybar/mediaplayer.sh 2> /dev/null", // Script in resources folder
+        "exec-if": "pgrep spotify"
+    }, 
+    // Power Menu
+    "custom/exit": {
+      "format": "",
+      //"on-click": "wlogout",
+      "on-click": "~/.config/rofi/powermenu/type-1/powermenu.sh",
+      "tooltip-format": "Power Menu"
+    }
+}
