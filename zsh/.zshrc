@@ -4,8 +4,13 @@ ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 [ ! -d $ZINIT_HOME/.git ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
 source "${ZINIT_HOME}/zinit.zsh"
 
+# Set $TERM to alacritty
+if command -v wal > /dev/null 2>&1 && [ "$TERM" = "alacritty" ]; then
+    wal -Rqe
+fi
+
 # Path Variables
-export TERM='xterm-256color'
+# export TERM='xterm-256color'
 export EDITOR='nvim'
 export VISUAL='nvim'
 
@@ -23,6 +28,8 @@ autoload -U compinit && compinit
 
 # Keybindings
 bindkey -e
+# bindkey "\e[H" beginning-of-line
+# bindkey "\e[F" end-of-line
 bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
 
@@ -60,3 +67,10 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 export PATH=$HOME/.local/bin:$PATH
+
+# bun completions
+[ -s "/home/john/.bun/_bun" ] && source "/home/john/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
