@@ -28,8 +28,9 @@ autoload -U compinit && compinit
 
 # Keybindings
 bindkey -e
-# bindkey "\e[H" beginning-of-line
-# bindkey "\e[F" end-of-line
+bindkey  "^[[H"   beginning-of-line
+bindkey  "^[[F"   end-of-line
+bindkey  "^[[3~"  delete-char
 bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
 
