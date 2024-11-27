@@ -1,0 +1,201 @@
+* {
+    font-family: "MesloLGS Nerd Font Mono", "Font Awesome 5 Free";
+    font-size: 18px;
+    min-height: 30px;
+    padding: 0px 0;
+}
+
+window#waybar {
+    background-color: rgba(43, 48, 59, 0.5);
+    /*border-bottom: 1px solid rgba(100, 114, 125, 1);*/
+    color: white;
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+#window {
+    font-weight: bold;
+}
+
+#workspaces {
+    font-size: 28px;
+    margin: 0 4px;
+    padding: 0;
+}
+
+button {
+    /* Use box-shadow instead of border so the text isn't offset */
+    box-shadow: inset 0 -3px transparent;
+    /* Avoid rounded borders under each button name */
+    border: none;
+    border-radius: 0;
+}
+
+/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+button:hover {
+    background: inherit;
+}
+
+button:focused {
+    background-color: #64727D;
+}
+
+#workspaces button {
+    font-size: 28px;
+    padding: 0 10px;
+    color: #ffffff;
+}
+
+#workspaces button:hover {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+#workspaces button.active {
+    background-color: rgba(0 ,0 ,0, 0.2);
+}
+
+#workspaces button.urgent {
+    background-color: #eb4d4b;
+}
+
+/* If workspaces is the leftmost module, omit left margin 
+.modules-left > widget:first-child > #workspaces {
+    margin-left: 0;
+}
+
+# If workspaces is the rightmost module, omit right margin 
+.modules-right > widget:last-child > #workspaces {
+    margin-right: 0;
+}*/
+
+#custom-appmenuicon {
+    /*background-color: @backgrounddark;*/
+    font-size: 44px;
+    color: #1793D1;
+    margin: -5px 0px -5px 12px;
+    padding: 0 10px;
+    border: none;
+}
+
+#custom-appmenuicon:hover {
+    /*box-shadow: inset 0 -3px #000000;
+    border: 1px solid white;
+    border-radius: 20px;*/
+    background: rgba(0, 0, 0, 0.2);
+}
+
+#group-links {
+  color: red;
+  padding: 0 10px;
+}
+
+#custom-brave, 
+#custom-browser, 
+#custom-keybindings, 
+#custom-outlook, 
+#custom-filemanager, 
+#custom-teams, 
+#custom-chatgpt, 
+#custom-calculator, 
+#custom-windowsvm, 
+#custom-cliphist, 
+#custom-wallpaper, 
+#custom-settings, 
+#custom-system,
+#custom-hyprshade,
+#custom-hypridle,
+#custom-tools,
+#custom-quicklink1,
+#custom-quicklink2,
+#custom-quicklink3,
+#custom-quicklink4,
+#custom-quicklink5,
+#custom-quicklink6,
+#custom-quicklink7,
+#custom-quicklink8,
+#custom-quicklink9,
+#custom-quicklink10,
+#custom-waybarthemes {
+    margin: 0px 10px;
+    font-size: 28px;
+    font-weight: bold;
+    opacity: 0.8;
+    color: white;
+}
+
+#mode {
+    background: #64727D;
+    border-bottom: 3px solid white;
+}
+
+#clock, #battery, #cpu, #memory, #network, #pulseaudio, #custom-spotify, #tray, #mode {
+    padding: 0 10px;
+    margin: 0 2px;
+/*    background: rgba(0,0,0,0.5);
+    border: 1px solid white;
+    border-radius: 6;
+*/
+}
+
+#clock {
+    font-weight: bold;
+}
+
+#battery {
+}
+
+#battery icon {
+    color: red;
+}
+
+#battery.charging {
+}
+
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: black;
+    }
+}
+
+#battery.warning:not(.charging) {
+    color: white;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#cpu {
+}
+
+#memory {
+}
+
+#network {
+}
+
+#network.disconnected {
+    background: #f53c3c;
+}
+
+#pulseaudio {
+}
+
+#pulseaudio.muted {
+}
+
+#custom-spotify {
+    color: rgb(102, 220, 105);
+}
+
+#tray {
+}
+
+#custom-exit {
+    margin: 0px 13px 0px 0px;
+    padding:0px;
+    font-size:30px;
+    opacity: 0.8;
+}

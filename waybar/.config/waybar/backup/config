@@ -2,6 +2,7 @@
     "layer": "top", // Waybar at top layer
     "position": "top", // Waybar at the bottom of your screen
     "height": 30, // Waybar height
+    "spacing": 5,
     // "width": 1366, // Waybar width
     // Choose the order of the modules
     "modules-left": ["custom/appmenuicon", "hyprland/workspaces", "hyprland/mode", "group/links", "custom/spotify"],
@@ -10,12 +11,13 @@
     // Hyprland Window
     "hyprland/window": {
       "rewrite": {
-        "(.*) - Brave": "$1",
+        "(.*) - Zen": "$1",
         "(.*) - Chromium": "$1",
         "(.*) - Brave Search": "$1",
         "(.*) - Outlook": "$1",
-        "(.*) Microsoft Teams": "$1"
+        "(.*) - Microsoft Teams": "$1"
       },
+      "format": "{title}",
       "separate-outputs": true
     },
     "hyprland/workspaces": {
@@ -39,7 +41,9 @@
         "persistent-workspaces": {
           "*": 5
         }
-
+    },
+    "hyprland/mode": {
+	"format": "{}"
     },
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
@@ -102,10 +106,12 @@
       "tooltip": false
     },
     "cpu": {
-        "format": "{usage}% "
+    	"interval": 10,
+        "format": "C:{usage}%"
     },
     "memory": {
-        "format": "{}% "
+        "interval": 30,
+	"format": "R:{used:0.1f}G ({percentage}%) S:{swapUsed:0.1f}G ({swapPercentage}%)"
     },
     "battery": {
         "bat": "BAT0",
@@ -128,21 +134,30 @@
         "format-disconnected": "Disconnected ⚠",
         "format-alt": "{ifname}: {ipaddr}/{cidr}"
     },
-    "pulseaudio": {
+    //"pulseaudio": {
         //"scroll-step": 1,
-        "format": "{volume}% {icon}",
-        "format-bluetooth": "{volume}% {icon}",
-        "format-muted": "",
-        "format-icons": {
-            "headphones": "",
-            "handsfree": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": ["", ""]
-        },
-        "on-click": "pavucontrol"
+        //"format": "{volume}% {icon}",
+        //"format-bluetooth": "{volume}% {icon}",
+        //"format-muted": "",
+        //"format-icons": {
+            //"headphones": "",
+            //"handsfree": "",
+            //"headset": "",
+            //"phone": "",
+            //"portable": "",
+            //"car": "",
+            //"default": ["", ""]
+        //},
+        //"on-click": "pavucontrol"
+    //},
+    "pulseaudio": {
+      "format": "{icon} {volume}%",
+      "format-icons": {
+        "default": ["\uf026", "\uf027", "\uf028"]
+      },
+      "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+      "on-click-right": "pavucontrol",
+      "format-muted": "\uf00d {volume}%"
     },
     "custom/spotify": {
         "format": " {}",
