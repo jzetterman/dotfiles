@@ -115,6 +115,45 @@ tooltip {
   text-shadow: 2px 0 2px rgba(0, 0, 0, 0.5);
 }
 
+#group-links {
+  color: red;
+  padding: 0 10px;
+}
+
+#custom-brave, 
+#custom-browser, 
+#custom-keybindings, 
+#custom-outlook, 
+#custom-filemanager, 
+#custom-teams, 
+#custom-chatgpt, 
+#custom-calculator, 
+#custom-windowsvm, 
+#custom-cliphist, 
+#custom-wallpaper, 
+#custom-settings, 
+#custom-system,
+#custom-hyprshade,
+#custom-hypridle,
+#custom-tools,
+#custom-quicklink1,
+#custom-quicklink2,
+#custom-quicklink3,
+#custom-quicklink4,
+#custom-quicklink5,
+#custom-quicklink6,
+#custom-quicklink7,
+#custom-quicklink8,
+#custom-quicklink9,
+#custom-quicklink10,
+#custom-waybarthemes {
+    margin: 0px 10px;
+    font-size: 28px;
+    font-weight: bold;
+    opacity: 0.8;
+    color: white;
+}
+
 /* === Modules === */
 
 /* == Window Icon == */
