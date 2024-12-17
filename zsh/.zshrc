@@ -56,6 +56,8 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 # Aliases
 alias ls='ls --color'
 alias cd=z
+alias cat=bat
+alias ls=lsd
 
 # Commands to run automatically
 fastfetch
