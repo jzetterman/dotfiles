@@ -8,7 +8,7 @@
   "gtk-layer-shell": true,
   // === Positions ===
   "modules-left": [
-    "custom/ws", // window icon
+    // "custom/ws", // window icon
     // "custom/left1",
     "hyprland/workspaces", // workspaces
     // "custom/right1",
@@ -77,7 +77,10 @@
       "children-class": "not-memory",
       "transition-left-to-right": true
     },
-    "modules": ["custom/calculator", "custom/windowsvm"]
+    "modules": [
+      "custom/calculator",
+      "custom/windowsvm"
+    ]
   },
   // Calculator
   "custom/calculator": {
@@ -88,7 +91,7 @@
   // Windows VM
   "custom/windowsvm": {
     "format": "",
-    "on-click": "looking-glass-client size:win=3840x2160",
+    "on-click": "looking-glass-client -m KEY_INSERT -F",
     "tooltip": false
   },
   "hyprland/window": {
@@ -215,7 +218,7 @@
     "format": "{}",
     "tooltip": true,
     "on-click": "~/.config/waybar/scripts/wifi-menu.sh",
-    "on-click-right": "kitty --title '󰤨  Network Manager TUI' bash -c nmtui",
+    "on-click-right": "ghostty --title '󰤨  Network Manager TUI' zsh -c nmtui",
     "interval": 1,
     "min-length": 1,
     "max-length": 1
@@ -271,7 +274,11 @@
   "pulseaudio": {
     "format": "{icon} {volume}%",
     "format-icons": {
-      "default": ["󰕿", "󰖀", "󰕾"],
+      "default": [
+        "󰕿",
+        "󰖀",
+        "󰕾"
+      ],
       "headphone": "󰋋",
       "headset": "󰋋"
     },
@@ -298,7 +305,15 @@
       "critical": 15
     },
     "format": "{icon} {capacity}%",
-    "format-icons": ["󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂"],
+    "format-icons": [
+      "󰁼",
+      "󰁽",
+      "󰁾",
+      "󰁿",
+      "󰂀",
+      "󰂁",
+      "󰂂"
+    ],
     "format-full": "󱃌 {capacity}%",
     "format-warning": "󰁻 {capacity}%",
     "format-critical": "󱃍 {capacity}%",
