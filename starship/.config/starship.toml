@@ -6,6 +6,7 @@ format = '''$os$username$hostname$fill$kubernetes$git_branch$git_status$all$dire
 [aws]
 format = 'on [$symbol($profile )(\($region\) )]($style)'
 symbol = " "
+disabled = true
 
 [azure]
 disabled = false
