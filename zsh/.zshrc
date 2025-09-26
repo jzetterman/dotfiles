@@ -62,14 +62,11 @@ alias ls=lsd
 # Commands to run automatically
 fastfetch
 
-# Shell integrations
-# source <(fzf --zsh) ** MacOS Only **
-eval "$(zoxide init zsh)"
-
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 export PATH=$HOME/.local/bin:$PATH
+export LIBVIRT_DEFAULT_URI="qemu:///system"
 
 # bun completions
 [ -s "/home/john/.bun/_bun" ] && source "/home/john/.bun/_bun"
@@ -79,3 +76,7 @@ export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 export PATH=$PATH:$HOME/go/bin
 export DOCKER_HOST=unix://$HOME/.docker/run/docker.sock
+
+# Shell integrations
+# source <(fzf --zsh) ** MacOS Only **
+eval "$(zoxide init zsh)"
